@@ -8,6 +8,7 @@ import { FooterComponent } from './components/shared/footer/footer.component';
 import { SearchComponent } from './components/search/search.component';
 import { EmplListComponent } from './components/empl-list/empl-list.component';
 import { FormsModule } from '@angular/forms';
+import { FilterPipe } from './pipes/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { FormsModule } from '@angular/forms';
     HeaderComponent,
     FooterComponent,
     SearchComponent,
-    EmplListComponent
+    EmplListComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,

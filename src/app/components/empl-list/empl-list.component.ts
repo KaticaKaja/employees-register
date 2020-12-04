@@ -8,8 +8,10 @@ import { EmplServiceService } from 'src/app/services/empl-service.service';
 })
 export class EmplListComponent implements OnInit {
   employee: string;
-
-  constructor(private interactionService : EmplServiceService) { }
+  prop:string = "fullName";
+  constructor(private interactionService : EmplServiceService) { 
+    console.log(this.employeeList);
+  }
 
   ngOnInit(): void {
     this.interactionService.inputValue$.subscribe(emp=>this.employee = emp);
@@ -18,24 +20,27 @@ export class EmplListComponent implements OnInit {
   employeeList = [
     {
        id: 1,
-       name: "John",
+       name: "Alex",
        lastName: "Perkz",
+       fullName: "Alex Perkz",
        picture: "",
        salary: "",
        onVac : true,       
     },
     {
       id: 2,
-      name: "John",
+      name: "Aleksa",
       lastName: "Perkz",
+      fullName: "Aleksa Perkz",
       picture: "",
       salary: "",
       onVac : true,       
    },
    {
       id: 3,
-      name: "John",
-      lastName: "Perkz",
+      name: "Aleksa",
+      lastName: "Zivkovic",
+      fullName: "Aleksa Zivkovic",
       picture: "",
       salary: "",
       onVac : true,       
@@ -44,6 +49,7 @@ export class EmplListComponent implements OnInit {
       id: 4,
       name: "John",
       lastName: "Perkz",
+      fullName: "John Perkz",
       picture: "",
       salary: "",
       onVac : true,       
@@ -52,6 +58,7 @@ export class EmplListComponent implements OnInit {
       id: 5,
       name: "John",
       lastName: "Perkz",
+      fullName: "John Perkz",
       picture: "",
       salary: "",
       onVac : true,       
