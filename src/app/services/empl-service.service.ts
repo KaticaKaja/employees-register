@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Subject } from 'rxjs';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -7,7 +7,7 @@ import { BehaviorSubject, Subject } from 'rxjs';
 export class EmplServiceService {
 
 
-  private  inputValueSource = new BehaviorSubject<string>("");
+  private  inputValueSource = new Subject<string>();
   inputValue$ = this.inputValueSource.asObservable();
 
 

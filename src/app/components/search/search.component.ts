@@ -14,10 +14,6 @@ export class SearchComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  // getEmployee(emp){
-  //   this.inputSearch = emp.value;
-
-  // }
 
   sendEmployee(){
     this.interactionService.sendValue(this.inputSearch);
