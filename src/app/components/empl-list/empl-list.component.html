@@ -3,7 +3,7 @@
 {{ employeeList[0].name}}
 
 <div class="">
-    <div *ngFor="let item of employeeList"  [ngClass]="{'red-border-class'item.onVac}">
+    <div *ngFor="let item of employeeList"  [ngClass]="{'red-border-class': item.onVac}">
         <p>{{item.id}}</p>
         <p>{{item.name}}</p>
         <p>{{item.lastName}}</p>

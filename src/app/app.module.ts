@@ -7,7 +7,6 @@ import { HeaderComponent } from './components/shared/header/header.component';
 import { FooterComponent } from './components/shared/footer/footer.component';
 import { SearchComponent } from './components/search/search.component';
 import { EmplListComponent } from './components/empl-list/empl-list.component';
-import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -19,11 +18,7 @@ import { CommonModule } from '@angular/common';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    CommonModule
-  ],
-  exports: [
-    CommonModule
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
