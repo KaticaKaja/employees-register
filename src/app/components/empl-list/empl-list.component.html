@@ -3,10 +3,7 @@
 <h1>{{ employee}}</h1>
 
 <div class="">
-    <div *ngFor="let item of employeeList|filter:employee:prop"  [ngClass]="{'red-border-class': item.onVac}" >
-        <p>{{item.id}}</p>
-        <p>{{item.name}}</p>
-        <p>{{item.lastName}}</p>
-        <p>{{item.onVac}}</p>
+    <div *ngFor="let item of employeeList|filter:employee:prop"  [ngClass]="{'red-border-class': item.onVac}">
+        <app-empl [employee]="item"></app-empl>
     </div>
 </div>

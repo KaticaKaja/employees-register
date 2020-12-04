@@ -10,7 +10,6 @@ export class EmplListComponent implements OnInit {
   employee: string;
   prop:string = "fullName";
   constructor(private interactionService : EmplServiceService) { 
-    console.log(this.employeeList);
   }
 
   ngOnInit(): void {
@@ -23,16 +22,16 @@ export class EmplListComponent implements OnInit {
        name: "Alex",
        lastName: "Perkz",
        fullName: "Alex Perkz",
-       picture: "",
+       picture: "https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=200",
        salary: "",
-       onVac : true,       
+       onVac : false,       
     },
     {
       id: 2,
       name: "Aleksa",
       lastName: "Perkz",
       fullName: "Aleksa Perkz",
-      picture: "",
+      picture: "https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=200",
       salary: "",
       onVac : true,       
    },
@@ -41,25 +40,25 @@ export class EmplListComponent implements OnInit {
       name: "Aleksa",
       lastName: "Zivkovic",
       fullName: "Aleksa Zivkovic",
-      picture: "",
+      picture: "https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=200",
       salary: "",
-      onVac : true,       
+      onVac : false,       
     },
     {
       id: 4,
       name: "John",
       lastName: "Perkz",
       fullName: "John Perkz",
-      picture: "",
+      picture: "https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=200",
       salary: "",
-      onVac : true,       
+      onVac : false,       
     },
     {
       id: 5,
       name: "John",
       lastName: "Perkz",
       fullName: "John Perkz",
-      picture: "",
+      picture: "https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=200",
       salary: "",
       onVac : true,       
     }

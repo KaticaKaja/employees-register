@@ -1,0 +1,7 @@
+<div *ngIf="employeeProfile; else defaultProfile">
+  <h1>{{employeeProfile.fullName}}</h1>
+  <img [src]="employeeProfile.picture" [alt]="employeeProfile.name">
+</div>
+<ng-template #defaultProfile>
+  <img src="https://s3.amazonaws.com/37assets/svn/765-default-avatar.png" alt="defaultProfile" width="300">
+</ng-template>
