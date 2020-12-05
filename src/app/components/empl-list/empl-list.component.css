@@ -1,7 +1,8 @@
-.red-border-class{
-     border: 1px solid red;
-     
-}
+/* .red-border-class{
+     border: 2px solid red;
+     border-radius: 12%;
+
+} */
 .flex{
      display: flex;
      flex-direction: row;

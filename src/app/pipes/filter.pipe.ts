@@ -7,8 +7,10 @@ export class FilterPipe implements PipeTransform {
 
   transform(value: any[], filterString:string, propName:string): any[] {
     const resultArray = [];
-
-    if(value === undefined || value.length === 0 || filterString === '' || filterString === undefined || propName === ''){ // proveriti kasnije - cleancode
+    if(value === undefined){
+      return;
+    }
+    if(value.length === 0 || filterString === '' || filterString === undefined || propName === ''){
       return value;
     }
     const regExPattern = new RegExp("^.*"+filterString.toLowerCase()+".*$");

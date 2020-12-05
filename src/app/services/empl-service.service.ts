@@ -9,7 +9,7 @@ export class EmplServiceService {
 
   private  inputValueSource = new Subject<string>(); //search => empl-list
   inputValue$ = this.inputValueSource.asObservable();
-  
+
   private employeePrevSource = new Subject<string>();
   empPreview$ = this.employeePrevSource.asObservable(); //empl => empl-preview
 
@@ -17,7 +17,7 @@ export class EmplServiceService {
   empInfo$ = this.employeeInfoSource.asObservable();
 
   constructor() { }
-  
+
 
   sendValue(value: string){
     this.inputValueSource.next(value);
@@ -25,11 +25,9 @@ export class EmplServiceService {
 
   sendEmplPrev(value: string){
     this.employeePrevSource.next(value);
-   
   }
 
   sendEmplInfo(value: any){
     this.employeeInfoSource.next(value);
-    console.log(value);
   }
 }

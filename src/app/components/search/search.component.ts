@@ -9,14 +9,15 @@ import { EmplServiceService } from 'src/app/services/empl-service.service';
 export class SearchComponent implements OnInit {
 
   inputSearch: string;
- 
+
   constructor(private interactionService : EmplServiceService) { }
 
   ngOnInit(): void {
   }
 
-  sendEmployee(){
-    this.interactionService.sendValue(this.inputSearch);
+  sendEmployee(search){
+    console.log();
+    this.interactionService.sendValue(this.inputSearch = search.target.value);
   }
 
 }
