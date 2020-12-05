@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 import { FilterPipe } from './pipes/filter.pipe';
 import { EmplComponent } from './components/empl/empl.component';
 import { EmplPreviewComponent } from './components/empl-preview/empl-preview.component';
+import { EmplInfoComponent } from './components/empl-info/empl-info.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { EmplPreviewComponent } from './components/empl-preview/empl-preview.com
     EmplListComponent,
     FilterPipe,
     EmplComponent,
-    EmplPreviewComponent
+    EmplPreviewComponent,
+    EmplInfoComponent
   ],
   imports: [
     BrowserModule,

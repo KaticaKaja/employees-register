@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
+import { BehaviorSubject, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -13,13 +13,23 @@ export class EmplServiceService {
   private employeePrevSource = new Subject<string>();
   empPreview$ = this.employeePrevSource.asObservable(); //empl => empl-preview
 
+  private employeeInfoSource = new BehaviorSubject<any>([]);
+  empInfo$ = this.employeeInfoSource.asObservable();
+
   constructor() { }
+  
 
   sendValue(value: string){
     this.inputValueSource.next(value);
   }
 
-  sendEmplPrev(value:string){
+  sendEmplPrev(value: string){
     this.employeePrevSource.next(value);
+   
+  }
+
+  sendEmplInfo(value: any){
+    this.employeeInfoSource.next(value);
+    console.log(value);
   }
 }
