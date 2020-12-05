@@ -1,0 +1,17 @@
+
+
+
+    <h5>Employyes on vacation:</h5>
+    <div *ngFor="let item of empList">
+        <div *ngIf="item.onVac == true" >
+        
+           <p style="color:red;">{{item.fullName}}</p>
+        </div>
+        
+    </div>
+    
+    <h5>Number of employees:  <span style="color:green">{{empList.length}}</span></h5>
+
+
+
+

@@ -14,8 +14,14 @@ export class EmplListComponent implements OnInit {
 
   ngOnInit(): void {
     this.interactionService.inputValue$.subscribe(emp=>this.employee = emp);
+    this.interactionService.sendEmplInfo(this.employeeList);
 
   }
+   
+  
+ 
+   
+ 
   employeeList = [
     {
        id: 1,

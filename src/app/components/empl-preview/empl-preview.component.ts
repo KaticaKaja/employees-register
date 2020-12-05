@@ -14,5 +14,6 @@ export class EmplPreviewComponent implements OnInit {
   ngOnInit(): void {
     this.service.empPreview$.subscribe(emp => this.employeeProfile = emp);
   }
+  
 
 }
