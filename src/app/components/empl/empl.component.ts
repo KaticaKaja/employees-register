@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { EmplServiceService } from 'src/app/services/empl-service.service';
 
 @Component({
@@ -9,7 +9,8 @@ import { EmplServiceService } from 'src/app/services/empl-service.service';
 export class EmplComponent implements OnInit {
 
   @Input() employee:any;
-  constructor(private service:EmplServiceService) { 
+  @Output() sayHi:EventEmitter<string> = new EventEmitter();
+  constructor(private service:EmplServiceService) {
   }
 
   ngOnInit(): void {
@@ -20,5 +21,8 @@ export class EmplComponent implements OnInit {
       return;
     }
     this.service.sendEmplPrev(this.employee);
+  }
+  sayHiToParent(){
+    this.sayHi.emit("Hello to parent from " + this.employee.fullName);
   }
 }

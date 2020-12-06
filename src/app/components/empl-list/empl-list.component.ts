@@ -10,6 +10,7 @@ export class EmplListComponent implements OnInit {
 
   employee: string;
   prop:string = "fullName";
+  messageFromChild:string;
 
   constructor(private interactionService : EmplServiceService) {
   }
@@ -18,7 +19,9 @@ export class EmplListComponent implements OnInit {
     this.interactionService.inputValue$.subscribe(emp=>this.employee = emp);
     this.interactionService.sendEmplInfo(this.employeeList);
   }
-
+  receiveMsg(msg){
+    this.messageFromChild = msg;
+  }
   employeeList = [
     {
        id: 1,
@@ -32,8 +35,8 @@ export class EmplListComponent implements OnInit {
     {
       id: 2,
       name: "Aleksa",
-      lastName: "Perkz",
-      fullName: "Aleksa Perkz",
+      lastName: "Colic",
+      fullName: "Aleksa Colic",
       picture: "https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=300",
       salary: 400,
       onVac : true,
@@ -49,18 +52,18 @@ export class EmplListComponent implements OnInit {
     },
     {
       id: 4,
-      name: "John",
+      name: "William",
       lastName: "Perkz",
-      fullName: "John Perkz",
+      fullName: "William Perkz",
       picture: "https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=300",
       salary: 1234,
       onVac : false,
     },
     {
       id: 5,
-      name: "John",
-      lastName: "Perkz",
-      fullName: "John Perkz",
+      name: "Aleksandra",
+      lastName: "Jones",
+      fullName: "Aleksandra Jones",
       picture: "https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=300",
       salary: 5654,
       onVac : true,
