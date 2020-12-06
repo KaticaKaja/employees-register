@@ -1,7 +1,8 @@
-<h2>Employee List</h2>
+<h2>Employee List</h2><br/>
+    <table >
+            <tr *ngFor="let item of employeeList|filter:employee:prop">
+                <app-empl [employee]="item"  class="flex"></app-empl><br/>     
+            </tr>
+    </table>
+  
 
-<div class="">
-    <div *ngFor="let item of employeeList|filter:employee:prop">
-        <app-empl [employee]="item"  class="flex"></app-empl><br>
-    </div>
-</div>
