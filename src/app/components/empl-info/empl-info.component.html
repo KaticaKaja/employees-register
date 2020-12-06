@@ -1,17 +1,14 @@
-
-
-
-    <h5>Employyes on vacation:</h5>
+    <!-- <div class="d-flex"> -->
+    <h5>Employees on vacation:</h5>
     <div *ngFor="let item of empList">
-        <div *ngIf="item.onVac == true" >
-        
-           <p style="color:red;">{{item.fullName}}</p>
+        <div *ngIf="item.onVac" >
+           <p class="text-danger">{{item.fullName}}</p>
         </div>
-        
-    </div>
-    
-    <h5>Number of employees:  <span style="color:green">{{empList.length}}</span></h5>
 
+    </div>
+
+    <h5>Number of employees:  <span class="text-success">{{empList.length}}</span></h5>
+  <!-- </div> -->
 
 
 

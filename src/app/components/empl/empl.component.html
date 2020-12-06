@@ -1,4 +1,4 @@
-<div class="d-flex align-items-center">
+<!-- <div class="d-flex align-items-center">
   <p>{{employee.id}}</p>
   <p>{{employee.name}}</p>
   <p>{{employee.lastName}}</p>
@@ -7,4 +7,17 @@
     <span class="badge badge-success">Available</span>
   </ng-template>
   <button class="btn btn-primary buttonStyle" (click)="previewEmployee()">Preview</button>
-</div>
+</div> -->
+
+<!-- <tr> -->
+      <th>{{employee.id}}</th>
+      <td>{{employee.name}}</td>
+      <td>{{employee.lastName}}</td>
+      <td>
+        <span *ngIf="employee.onVac; else available" class="badge badge-danger">On Vacation</span>
+        <ng-template #available>
+          <span class="badge badge-success">Available</span>
+        </ng-template>
+      </td>
+      <td><button class="btn btn-primary" (click)="previewEmployee()">Preview</button></td>
+    <!-- </tr> -->

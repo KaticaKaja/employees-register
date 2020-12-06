@@ -1,7 +1,24 @@
 <h2>Employee List</h2>
 
-<div class="">
-    <div *ngFor="let item of employeeList|filter:employee:prop">
-        <app-empl [employee]="item"  class="flex"></app-empl><br>
-    </div>
-</div>
+<!-- <div> -->
+  <div class="table-responsive">
+  <table class="table">
+    <thead>
+      <tr class="row">
+        <th scope="col">#</th>
+        <th scope="col">First</th>
+        <th scope="col">Last</th>
+        <th scope="col">Availability</th>
+        <th scope="col">Preview</th>
+      </tr>
+    </thead>
+    <tbody>
+    <!-- <div > -->
+      <tr class="row" *ngFor="let item of employeeList|filter:employee:prop">
+      <app-empl [employee]="item"></app-empl>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+    <!-- </div> -->
+<!-- </div> -->

@@ -1,3 +1,5 @@
-.buttonStyle{
-    margin-left: 30px;
+th, td{
+  min-width: 100px;
+  text-align: center;
+  padding: 2% 0%;
 }
