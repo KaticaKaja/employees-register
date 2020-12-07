@@ -12,7 +12,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr class="row" *ngFor="let item of employeeList|filter:employee:prop">
+      <tr class="row" *ngFor="let item of employeeList|filter:searchedEmployee:prop">
       <app-empl [employee]="item" (sayHi) = "receiveMsg($event)"></app-empl>
       </tr>
       </tbody>

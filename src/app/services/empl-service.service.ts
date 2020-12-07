@@ -13,21 +13,24 @@ export class EmplServiceService {
   private employeePrevSource = new Subject<string>();
   empPreview$ = this.employeePrevSource.asObservable(); //empl => empl-preview
 
-  private employeeInfoSource = new BehaviorSubject<any>([]);
+  private employeeInfoSource = new BehaviorSubject<Array<any>>([]);
   empInfo$ = this.employeeInfoSource.asObservable();
 
   constructor() { }
 
 
   sendValue(value: string){
+    if(!value) return;
     this.inputValueSource.next(value);
   }
 
   sendEmplPrev(value: string){
+    if(!value) return;
     this.employeePrevSource.next(value);
   }
 
   sendEmplInfo(value: any){
+    if(!value) return;
     this.employeeInfoSource.next(value);
   }
 }

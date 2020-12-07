@@ -8,7 +8,7 @@ import { EmplServiceService } from 'src/app/services/empl-service.service';
 })
 export class SearchComponent implements OnInit {
 
-  inputSearch: string;
+  inputSearch: string = "";
 
   constructor(private interactionService : EmplServiceService) { }
 
@@ -16,6 +16,7 @@ export class SearchComponent implements OnInit {
   }
 
   sendEmployee(search){
+    if(!search) return;
     this.interactionService.sendValue(this.inputSearch = search.target.value);
   }
 

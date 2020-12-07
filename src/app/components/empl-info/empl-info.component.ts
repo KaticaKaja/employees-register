@@ -9,13 +9,16 @@ import { EmplServiceService } from 'src/app/services/empl-service.service';
 })
 export class EmplInfoComponent implements OnInit, OnDestroy {
 
-  empList:any;
+  empList:Array<any> = [];
   private subcription: Subscription;
 
   constructor(private service:EmplServiceService) { }
 
   ngOnInit(): void {
-    this.subcription = this.service.empInfo$.subscribe(emp=>this.empList = emp);
+    this.subcription = this.service.empInfo$.subscribe((emp : Array<any>)=>{
+      if(!Array.isArray(emp))  return;
+      this.empList = emp;
+    });
   }
 
   ngOnDestroy(): void {
