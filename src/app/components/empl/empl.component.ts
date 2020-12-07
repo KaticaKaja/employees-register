@@ -23,6 +23,6 @@ export class EmplComponent implements OnInit {
     this.service.sendEmplPrev(this.employee);
   }
   sayHiToParent(){
-    this.sayHi.emit("Hello to parent from " + this.employee.fullName);
+    this.sayHi.emit("Hi my name is" +" "+ this.employee.fullName);
   }
 }
