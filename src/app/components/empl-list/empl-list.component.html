@@ -1,9 +1,5 @@
-<h2>Employee List</h2><br/>
-
-  
-
-<!-- <div> -->
-  <div class="table-responsive">
+<h2>Employee List</h2>
+<p>{{messageFromChild}}</p>
   <table class="table">
     <thead>
       <tr class="row">
@@ -12,15 +8,12 @@
         <th scope="col">Last</th>
         <th scope="col">Availability</th>
         <th scope="col">Preview</th>
+        <th scope="col">Say hi</th>
       </tr>
     </thead>
     <tbody>
-    <!-- <div > -->
       <tr class="row" *ngFor="let item of employeeList|filter:employee:prop">
-      <app-empl [employee]="item"></app-empl>
+      <app-empl [employee]="item" (sayHi) = "receiveMsg($event)"></app-empl>
       </tr>
       </tbody>
-    </table>
-  </div>
-    <!-- </div> -->
-<!-- </div> -->
+  </table>
