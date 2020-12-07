@@ -13,7 +13,10 @@ export class EmplPreviewComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.service.empPreview$.subscribe(emp => this.employeeProfile = emp);
+    this.service.empPreview$.subscribe((emp) => {
+      this.show = false;
+      this.employeeProfile = emp;
+    });
   }
   showSalary(event){
     event.target.innerText = (!this.show) ? 'Hide salary' : 'Show salary';
