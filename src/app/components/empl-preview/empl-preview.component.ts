@@ -17,7 +17,10 @@ export class EmplPreviewComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.service.empPreview$.subscribe(emp => this.employeeProfile = emp);
+    this.service.empPreview$.subscribe((emp) => {
+      this.show = false;
+      this.employeeProfile = emp;
+    });
   }
 
   ngOnDestroy(): void {
