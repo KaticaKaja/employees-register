@@ -16,7 +16,6 @@ export class SearchComponent implements OnInit {
   }
 
   sendEmployee(search){
-    console.log();
     this.interactionService.sendValue(this.inputSearch = search.target.value);
   }
 
