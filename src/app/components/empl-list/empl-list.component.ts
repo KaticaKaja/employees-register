@@ -9,16 +9,19 @@ import { EmplServiceService } from 'src/app/services/empl-service.service';
 })
 export class EmplListComponent implements OnInit, OnDestroy {
 
-  employee: string;
+  searchedEmployee: string ="";
   prop:string = "fullName";
-  messageFromChild:string;
+  messageFromChild:string = "";
   private subscription:Subscription;
   constructor(private interactionService : EmplServiceService) {
   }
 
 
   ngOnInit(): void {
-    this.subscription = this.interactionService.inputValue$.subscribe(emp=>this.employee = emp);
+    this.subscription = this.interactionService.inputValue$.subscribe((inputSearch)=>{
+      if(!inputSearch) return;
+      this.searchedEmployee = inputSearch;
+    });
     this.interactionService.sendEmplInfo(this.employeeList);
   }
 
@@ -27,6 +30,7 @@ export class EmplListComponent implements OnInit, OnDestroy {
   }
 
   receiveMsg(msg){
+    if(!msg) return;
     this.messageFromChild = msg;
   }
   employeeList = [
