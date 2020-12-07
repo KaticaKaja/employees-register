@@ -8,7 +8,7 @@ import { EmplServiceService } from 'src/app/services/empl-service.service';
 })
 export class EmplComponent implements OnInit {
 
-  @Input() employee:any;
+  @Input() employee:any = {};
   @Output() sayHi:EventEmitter<string> = new EventEmitter();
   constructor(private service:EmplServiceService) {
   }
@@ -17,12 +17,11 @@ export class EmplComponent implements OnInit {
   }
 
   previewEmployee(){
-    if(this.employee === undefined){
-      return;
-    }
+    if(!this.employee) return;
     this.service.sendEmplPrev(this.employee);
   }
   sayHiToParent(){
+    if(!this.employee) return;
     this.sayHi.emit("Hi my name is" +" "+ this.employee.fullName);
   }
 }

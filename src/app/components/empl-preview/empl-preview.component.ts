@@ -9,15 +9,18 @@ import { EmplServiceService } from 'src/app/services/empl-service.service';
 })
 
 export class EmplPreviewComponent implements OnInit, OnDestroy {
-  employeeProfile:any = "";
+  employeeProfile:any = ""; // ne vraca default-nu sliku ako je {}
   show:boolean = false;
   private subscription:Subscription;
 
   constructor(private service:EmplServiceService) {
+    console.log(this.employeeProfile);
   }
 
   ngOnInit(): void {
-    this.service.empPreview$.subscribe((emp) => {
+    this.subscription = this.service.empPreview$.subscribe((emp) => {
+      console.log(this.employeeProfile);
+      if(!emp) return;
       this.show = false;
       this.employeeProfile = emp;
     });
