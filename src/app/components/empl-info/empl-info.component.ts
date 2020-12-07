@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { EmplServiceService } from 'src/app/services/empl-service.service';
 
 @Component({
@@ -6,16 +7,18 @@ import { EmplServiceService } from 'src/app/services/empl-service.service';
   templateUrl: './empl-info.component.html',
   styleUrls: ['./empl-info.component.css']
 })
-export class EmplInfoComponent implements OnInit {
+export class EmplInfoComponent implements OnInit, OnDestroy {
 
   empList:any;
-
+  private subcription: Subscription;
 
   constructor(private service:EmplServiceService) { }
 
   ngOnInit(): void {
-    this.service.empInfo$.subscribe(emp=>this.empList = emp);
+    this.subcription = this.service.empInfo$.subscribe(emp=>this.empList = emp);
   }
 
-
+  ngOnDestroy(): void {
+    this.subcription.unsubscribe();
+  }
 }

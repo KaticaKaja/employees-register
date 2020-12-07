@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { EmplServiceService } from 'src/app/services/empl-service.service';
 
 @Component({
@@ -6,19 +7,25 @@ import { EmplServiceService } from 'src/app/services/empl-service.service';
   templateUrl: './empl-list.component.html',
   styleUrls: ['./empl-list.component.css']
 })
-export class EmplListComponent implements OnInit {
+export class EmplListComponent implements OnInit, OnDestroy {
 
   employee: string;
   prop:string = "fullName";
   messageFromChild:string;
-
+  private subscription:Subscription;
   constructor(private interactionService : EmplServiceService) {
   }
 
+
   ngOnInit(): void {
-    this.interactionService.inputValue$.subscribe(emp=>this.employee = emp);
+    this.subscription = this.interactionService.inputValue$.subscribe(emp=>this.employee = emp);
     this.interactionService.sendEmplInfo(this.employeeList);
   }
+
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
+  }
+
   receiveMsg(msg){
     this.messageFromChild = msg;
   }
