@@ -13,12 +13,15 @@ export class SearchComponent implements OnInit {
   constructor(private interactionService : EmplServiceService) { }
 
   ngOnInit(): void {
+    
   }
+  
 
   sendEmployee(search){
     if(!search) return;
     if(!search.target) return;
     this.interactionService.sendValue(this.inputSearch = search.target.value);
+    
   }
 
 }

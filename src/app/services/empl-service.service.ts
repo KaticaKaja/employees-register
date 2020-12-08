@@ -28,7 +28,7 @@ export class EmplServiceService {
     this.employeePrevSource.next(value);
   }
 
-  sendEmplInfo(value: any){
+  sendEmplInfo(value: Array<any>){
     if(!value) return;
     this.employeeInfoSource.next(value);
   }

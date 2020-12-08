@@ -12,7 +12,6 @@ export class EmplPreviewComponent implements OnInit, OnDestroy {
   employeeProfile:any = "";
   show:boolean = false;
   private subscription:Subscription;
-
   constructor(private service:EmplServiceService) {
   }
 

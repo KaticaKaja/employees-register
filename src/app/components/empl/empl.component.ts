@@ -8,7 +8,7 @@ import { EmplServiceService } from 'src/app/services/empl-service.service';
 })
 export class EmplComponent implements OnInit {
 
-  @Input() employee:any = {};
+  @Input() employee:any;
   @Output() sayHi:EventEmitter<string> = new EventEmitter();
   constructor(private service:EmplServiceService) {
   }
