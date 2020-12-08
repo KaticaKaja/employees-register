@@ -20,11 +20,10 @@ export class EmplServiceService {
 
 
   sendValue(value: string){
-    if(!value) return;
     this.inputValueSource.next(value);
   }
 
-  sendEmplPrev(value: string){
+  sendEmplPrev(value: any){
     if(!value) return;
     this.employeePrevSource.next(value);
   }

@@ -5,21 +5,17 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class FilterPipe implements PipeTransform {
 
-  transform(value: any[], filterString:string, propName:string): any[] {
-    const resultArray = [];
-    if(value === undefined){
-      return;
-    }
-    if(value.length === 0 || filterString === '' || filterString === undefined || propName === ''){
-      return value;
-    }
-    const regExPattern = new RegExp("^.*"+filterString.toLowerCase()+".*$");
-    for(const item of value){
-      if(item[propName].toLowerCase().match(regExPattern)){
-        resultArray.push(item);
-      }
-    }
-    return resultArray;
+  transform(value: Array<any>, filterString:string, propName:string): Array<any> {
+
+    if(!Array.isArray(value)) return [];
+    if(value.length === 0) return [];
+    if(!filterString) return value;
+    if(!propName) return;
+    filterString = filterString.toLowerCase();
+
+    return value.filter(item => {
+      return item[propName].toLowerCase().includes(filterString);
+    });
   }
 
 }

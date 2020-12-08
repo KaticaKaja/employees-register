@@ -19,7 +19,6 @@ export class EmplListComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.subscription = this.interactionService.inputValue$.subscribe((inputSearch)=>{
-      if(!inputSearch) return;
       this.searchedEmployee = inputSearch;
     });
     this.interactionService.sendEmplInfo(this.employeeList);
@@ -75,6 +74,15 @@ export class EmplListComponent implements OnInit, OnDestroy {
       name: "Alexandra",
       lastName: "Jones",
       fullName: "Alexandra Jones",
+      picture: "https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=300",
+      salary: 5654,
+      onVac : true,
+    },
+    {
+      id: 6,
+      name: "Milos",
+      lastName: "Crnjanski",
+      fullName: "Milos Crnjanski",
       picture: "https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=300",
       salary: 5654,
       onVac : true,
