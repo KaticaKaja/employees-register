@@ -12,33 +12,6 @@ export class EmplInfoComponent implements OnInit, OnDestroy {
     empList: Array<any> = [];
     private subcription: Subscription;
 
-    //
-    counterValue = 0;
-
-    @Input()
-    get counter() {
-        return this.counterValue;
-    }
-
-    @Output() counterChange = new EventEmitter();
-
-    set counter(val) {
-        this.counterValue = val;
-        this.counterChange.emit(this.counterValue);
-    }
-
-    // set counter(value) {
-    //     this.counterValue = value;
-    // }
-
-    decrement() {
-        this.counter--;
-    }
-
-    increment() {
-        this.counter++;
-    }
-//
 
     constructor(private service: EmplServiceService) { }
 
