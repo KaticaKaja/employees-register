@@ -1,19 +1,19 @@
 <h2>Employee List</h2>
 <p>{{messageFromChild}}</p>
-  <table class="table">
+<table class="table">
     <thead>
-      <tr class="row">
-        <th scope="col">#</th>
-        <th scope="col">First</th>
-        <th scope="col">Last</th>
-        <th scope="col">Availability</th>
-        <th scope="col">Preview</th>
-        <th scope="col">Say hi</th>
-      </tr>
+        <tr class="row">
+            <th scope="col">#</th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Availability</th>
+            <th scope="col">Preview</th>
+            <th scope="col">Say hi</th>
+        </tr>
     </thead>
     <tbody>
-      <tr class="row" *ngFor="let item of employeeList|filter:searchedEmployee:prop">
-      <app-empl [employee]="item" (sayHi) = "receiveMsg($event)"></app-empl>
-      </tr>
-      </tbody>
-  </table>
+        <tr class="row" *ngFor="let item of employeeList|filter:searchedEmployee:prop">
+            <app-empl [employee]="item" (sayHi)="receiveMsg($event)"></app-empl>
+        </tr>
+    </tbody>
+</table>

@@ -2,10 +2,10 @@
 <td>{{employee.name}}</td>
 <td>{{employee.lastName}}</td>
 <td>
-  <span *ngIf="employee.onVac; else available" class="badge badge-danger">On Vacation</span>
-  <ng-template #available>
-    <span class="badge badge-success">Available</span>
-  </ng-template>
+    <span *ngIf="employee.onVac; else available" class="badge badge-danger">On Vacation</span>
+    <ng-template #available>
+        <span class="badge badge-success">Available</span>
+    </ng-template>
 </td>
 <td><button class="btn btn-primary" (click)="previewEmployee()">Preview</button></td>
 <td><button class="btn btn-outline-success" (click)="sayHiToParent()">Selection</button></td>
