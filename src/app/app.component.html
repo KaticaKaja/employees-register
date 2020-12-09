@@ -5,6 +5,7 @@
         <div class="col-lg-8">
             <div class="row">
                 <app-search></app-search>
+                <app-change-appearance [(counter)]="someValue" class="ml-5"></app-change-appearance>
             </div>
             <div class="row mt-5">
                 <app-empl-list class="w-100"></app-empl-list>
@@ -12,7 +13,7 @@
         </div>
         <div class="col-lg-4">
             <div class="row">
-                <app-empl-info [(counter)]="someValue"></app-empl-info>
+                <app-empl-info ></app-empl-info>
             </div>
             <div class="row my-4">
                 <app-empl-preview></app-empl-preview>

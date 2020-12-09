@@ -12,6 +12,7 @@ import { FilterPipe } from './pipes/filter.pipe';
 import { EmplComponent } from './components/empl/empl.component';
 import { EmplPreviewComponent } from './components/empl-preview/empl-preview.component';
 import { EmplInfoComponent } from './components/empl-info/empl-info.component';
+import { ChangeAppearanceComponent } from './components/change-appearance/change-appearance.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { EmplInfoComponent } from './components/empl-info/empl-info.component';
     FilterPipe,
     EmplComponent,
     EmplPreviewComponent,
-    EmplInfoComponent
+    EmplInfoComponent,
+    ChangeAppearanceComponent
   ],
   imports: [
     BrowserModule,
