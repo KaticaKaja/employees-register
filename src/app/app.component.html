@@ -1,3 +1,4 @@
+<div [style.font-size.px]="someValue">
 <app-header></app-header>
 <div class="container min-vh-100">
     <div class="row justify-content-lg-between">
@@ -11,7 +12,7 @@
         </div>
         <div class="col-lg-4">
             <div class="row">
-                <app-empl-info></app-empl-info>
+                <app-empl-info [(counter)]="someValue"></app-empl-info>
             </div>
             <div class="row my-4">
                 <app-empl-preview></app-empl-preview>
@@ -20,3 +21,4 @@
     </div>
 </div>
 <app-footer></app-footer>
+</div>
